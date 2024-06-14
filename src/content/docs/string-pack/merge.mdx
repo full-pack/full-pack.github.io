@@ -1,0 +1,21 @@
+---
+title: Merge
+description: Merge n number of strings together with a separator in javascript/typescript.
+head:
+    - tag: title
+      content: String-Pack | Merge
+tableOfContents: false
+---
+
+import { Code } from '@astrojs/starlight/components'
+
+Merges multiple strings into a single string using a specified separator.
+
+export const merge = 
+`merge('-', 'Apple', 'Orange', 'Banana') // 'Apple-Orange-Banana'
+
+merge(true, ['Banana', 'Orange', 'Apple', 'Mango']) // 'Banana Orange Apple Mango'
+
+merge(false, ['1', '2', '3'], ['4', '5', '6']) // '123456'`;
+
+<Code code={merge} lang="js" />

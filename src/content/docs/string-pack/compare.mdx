@@ -1,0 +1,33 @@
+---
+title: Compare
+description: Compare two strings using compare for strict equality check and looseCompare for case-insensitive equality check in javascript/typescript.
+head:
+    - tag: title
+      content: String-Pack | Compare
+---
+
+import { Code } from '@astrojs/starlight/components'
+
+Checks equality of two strings.
+
+### compare
+
+Performs a strict comparison between two strings.
+
+export const compare = 
+`compare('hello', 'hello') // true
+
+compare('abc', 'ABC') // false`;
+
+<Code code={compare} lang="js" />
+
+### looseCompare
+
+Performs a case-insensitive loose comparison between two strings.
+
+export const looseCompare = 
+`looseCompare('CAps', 'caPS') // true
+
+looseCompare('abc', '123') // false`;
+
+<Code code={looseCompare} lang="js" />

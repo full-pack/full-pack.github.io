@@ -1,0 +1,45 @@
+---
+title: Getting Started
+description: Getting started with @full-pack/string-pack. A lightweight and versatile String Utility Package for Node.js & Browser.
+head:
+    - tag: title
+      content: String-Pack
+next: Functions
+---
+
+import { Code, Tabs, TabItem } from '@astrojs/starlight/components'
+
+export const highlights = ['npm', 'yarn', 'pnpm', 'bun']
+
+###### `string-pack` is lightweight and versatile String Utility Package for Node.js & Browser.
+
+### Installation
+
+<Tabs>
+    <TabItem label="npm" icon="seti:npm">
+        <Code code={`npm install @full-pack/string-pack`} lang="bash" mark={highlights} />
+    </TabItem>
+    <TabItem label="yarn" icon="seti:yarn">
+        <Code code={`yarn add @full-pack/string-pack`} lang="bash" mark={highlights} />
+    </TabItem>
+    <TabItem label="pnpm" icon="pnpm">
+        <Code code={`pnpm add @full-pack/string-pack`} lang="bash" mark={highlights} />
+    </TabItem>
+    <TabItem label="bun" icon="bun">
+        <Code code={`bun add @full-pack/string-pack`} lang="bash" mark={highlights} />
+    </TabItem>
+</Tabs>
+
+### Usage
+
+#### Require
+
+export const requireCode = `const { ... } = require('@full-pack/string-pack');`
+
+<Code code={requireCode} lang="js" />
+
+#### Import
+
+export const importCode = `import { ... } from '@full-pack/string-pack';`
+
+<Code code={importCode} lang="js" />

@@ -1,0 +1,99 @@
+---
+title: 'CaseValidation'
+description: Validate different types of case such as snake, kebab, camel, and pascal case strings in javascript/typescript.
+head:
+    - tag: title
+      content: String-Pack | CaseValidation
+---
+
+import { Code } from '@astrojs/starlight/components'
+
+### isAlpha
+
+Checks if a string contains only alphabetic characters (A-Z, a-z).
+
+export const isAlpha = `isAlpha('HelloWorld') // true
+isAlpha('Hello123') // false`
+
+<Code code={isAlpha} lang="js" />
+
+### isAlphaNumeric
+
+Checks if a string contains only alphanumeric characters (A-Z, a-z, 0-9).
+
+export const isAlphaNumeric = `isAlphaNumeric('Hello01') // true
+isAlphaNumeric('1234567890') // false`
+
+<Code code={isAlphaNumeric} lang="js" />
+
+### isSnakeCase
+
+Checks if a string is in snake_case format.
+
+export const isSnakeCase = 
+`// Valid
+isSnakeCase('snake_case_example') // true
+isSnakeCase('hello_world') // true
+
+// Valid with alphanumeric flag
+isSnakeCase('with_1234', true) // true
+isSnakeCase('pi_3_14', true) // true
+
+// Invalid
+isSnakeCase('123at_start') // false
+isSnakeCase(' no_space_allowed') // false
+isSnakeCase('no_CAPS') // false`
+
+<Code code={isSnakeCase} lang="js" />
+
+### isKebabCase
+
+Checks if a string is in kebab-case format.
+
+export const isKebabCase = 
+`// Valid
+isKebabCase('kebab-case-example') // true
+isKebabCase('hello-world') // true
+
+// Valid with alphanumeric flag
+isKebabCase('with-1234', true) // true
+isKebabCase('pi-3-14', true) // true
+
+// Invalid
+isKebabCase('123at-start') // false
+isKebabCase(' no-space-allowed') // false
+isKebabCase('no-CAPS') // false`
+
+<Code code={isKebabCase} lang="js" />
+
+### isCamelCase
+
+Checks if a string is in camelCase format.
+
+export const isCamelCase = 
+`// Valid
+isCamelCase('camelCaseExample') // true
+isCamelCase('helloWorld') // true
+
+// Invalid
+isCamelCase('CAMEL') // false
+isCamelCase(' noSpaceAllowed') // false
+isCamelCase('withThe1234') // false`
+
+<Code code={isCamelCase} lang="js" />
+
+### isPascalCase
+
+Checks if a string is in PascalCase format.
+
+export const isPascalCase = 
+`// Valid
+isPascalCase('PascalCaseExample') // true
+isPascalCase('HelloWorld') // true
+
+// Invalid
+isPascalCase('PASCAL') // false
+isPascalCase(' NoSpaceAllowed') // false
+isPascalCase('WithThe1234') // false`
+
+<Code code={isPascalCase} lang="js" />

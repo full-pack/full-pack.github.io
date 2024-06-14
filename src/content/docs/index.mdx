@@ -1,0 +1,36 @@
+---
+title: Home
+head:
+    - tag: title
+      content: Full-Pack
+
+template: splash
+hero:
+    title: Full-Pack
+    tagline: Extend your javascript library
+
+    actions:
+        - text: View on GitHub
+          link: https://github.com/full-pack
+          icon: external
+        - text: Checkout Docs
+          link: /string-pack/
+          icon: right-arrow
+          variant: primary
+---
+
+import { Card, CardGrid, LinkCard, Badge } from '@astrojs/starlight/components'
+
+<CardGrid>
+    <Card title="String-Pack" icon="bars">
+        <LinkCard
+            description="String utilities for JavaScript/TypeScript."
+            href="/string-pack"
+        />
+    </Card>
+
+    <Card title="Math-Pack" icon="puzzle">
+        <Badge text="Coming Soon" variant="note" size="large" />
+    </Card>
+
+</CardGrid>
