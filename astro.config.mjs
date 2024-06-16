@@ -9,7 +9,8 @@ export default defineConfig({
             title: 'Full-Pack',
             favicon: 'favicon.png',
             logo: {
-                src: '/src/assets/fpLogo.png',
+                dark: '/src/assets/fp_logo_dark.png',
+                light: '/src/assets/fp_logo_light.png',
                 replacesTitle: true
             },
             sidebar: [
