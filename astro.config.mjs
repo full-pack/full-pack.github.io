@@ -25,11 +25,24 @@ export default defineConfig({
                                     label: 'Functions',
                                     items: [
                                         { label: 'merge', link: '/string-pack/merge' },
+                                        { label: 'reverse', link: '/string-pack/reverse' },
                                         { label: 'compare', link: '/string-pack/compare/' },
                                         { label: 'padding', link: '/string-pack/padding' },
                                         { label: 'regionMatchers', link: '/string-pack/region-matchers' },
                                         { label: 'caseConversion', link: '/string-pack/case-conversion' },
                                         { label: 'caseValidation', link: '/string-pack/case-validation' }
+                                    ]
+                                },
+                                {
+                                    label: 'Classes',
+                                    badge: {
+                                        text: 'Coming Soon',
+                                        variant: 'note',
+                                        size: 'medium'
+                                    },
+                                    items: [
+                                        { label: 'StringBuilder', link: '/string-pack/#' },
+                                        { label: 'StringValidator', link: '/string-pack/#' }
                                     ]
                                 }
                             ]
