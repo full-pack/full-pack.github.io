@@ -12,22 +12,54 @@ Checks equality of two strings.
 
 ### compare
 
-Performs a strict comparison between two strings.
+Performs a case-sensitive strict comparison between two strings.
 
-export const compare = 
-`compare('hello', 'hello') // true
+#### Parameters
+
+- `str1`: `string` - The first string for comparison.
+- `str2`: `string` - The first string for comparison.
+ 
+#### Returns: `boolean`
+
+- Returns true if the strings are equal; otherwise, false.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function compare(str1: string, str2: string): boolean"
+/>
+
+export const compare =
+  `compare('hello', 'hello') // true
 
 compare('abc', 'ABC') // false`;
 
-<Code code={compare} lang="js" />
+<Code frame='code' title='Examples' code={compare} lang="js" />
 
 ### looseCompare
 
 Performs a case-insensitive loose comparison between two strings.
 
-export const looseCompare = 
-`looseCompare('CAps', 'caPS') // true
+#### Parameters
+
+- `str1`: `string` - The first string for comparison.
+- `str2`: `string` - The first string for comparison.
+ 
+#### Returns: `boolean`
+
+- Returns true if the strings are equal (case-insensitive); otherwise, false.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function looseCompare(str1: string, str2: string): boolean"
+/>
+
+export const looseCompare =
+  `looseCompare('CAps', 'caPS') // true
 
 looseCompare('abc', '123') // false`;
 
-<Code code={looseCompare} lang="js" />
+<Code frame='code' title='Examples' code={looseCompare} lang="js" />

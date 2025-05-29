@@ -9,7 +9,7 @@ next: Functions
 
 import { Code, Tabs, TabItem } from '@astrojs/starlight/components'
 
-export const highlights = ['npm', 'yarn', 'pnpm', 'bun']
+export const highlights = ['npm', 'yarn', 'pnpm', 'bun', 'deno']
 
 ###### `string-pack` is lightweight and versatile String Utility Package for Node.js & Browser.
 
@@ -17,16 +17,19 @@ export const highlights = ['npm', 'yarn', 'pnpm', 'bun']
 
 <Tabs>
     <TabItem label="npm" icon="seti:npm">
-        <Code code={`npm install @full-pack/string-pack`} lang="bash" mark={highlights} />
+        <Code frame='terminal' code={`npm install @full-pack/string-pack`} lang="sh" mark={highlights[0]} />
     </TabItem>
     <TabItem label="yarn" icon="seti:yarn">
-        <Code code={`yarn add @full-pack/string-pack`} lang="bash" mark={highlights} />
+        <Code frame='terminal' code={`yarn add @full-pack/string-pack`} lang="sh" mark={highlights[1]} />
     </TabItem>
     <TabItem label="pnpm" icon="pnpm">
-        <Code code={`pnpm add @full-pack/string-pack`} lang="bash" mark={highlights} />
+        <Code frame='terminal' code={`pnpm add @full-pack/string-pack`} lang="sh" mark={highlights[2]} />
     </TabItem>
     <TabItem label="bun" icon="bun">
-        <Code code={`bun add @full-pack/string-pack`} lang="bash" mark={highlights} />
+        <Code frame='terminal' code={`bun add @full-pack/string-pack`} lang="sh" mark={highlights[3]} />
+    </TabItem>
+    <TabItem label="deno" icon="deno">
+        <Code frame='terminal' code={`deno install npm:@full-pack/string-pack`} lang="sh" mark={highlights[4]} />
     </TabItem>
 </Tabs>
 

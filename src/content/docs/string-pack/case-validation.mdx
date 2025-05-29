@@ -12,26 +12,79 @@ import { Code } from '@astrojs/starlight/components'
 
 Checks if a string contains only alphabetic characters (A-Z, a-z).
 
-export const isAlpha = `isAlpha('HelloWorld') // true
+#### Parameter: `string` 
+
+- The string to check.
+ 
+#### Returns: `boolean`
+
+- True if only alphabetic characters, false otherwise.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function isAlpha(str: string): boolean"
+/>
+
+export const isAlpha =
+  `isAlpha('HelloWorld') // true
 isAlpha('Hello123') // false`
 
-<Code code={isAlpha} lang="js" />
+<Code frame='code' title='Examples' code={isAlpha} lang="js" />
 
 ### isAlphaNumeric
 
 Checks if a string contains only alphanumeric characters (A-Z, a-z, 0-9).
 
-export const isAlphaNumeric = `isAlphaNumeric('Hello01') // true
+#### Parameter: `string` 
+
+- The string to check.
+ 
+#### Returns: `boolean`
+
+- True if only alphanumeric characters, false otherwise.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function isAlphaNumeric(str: string): boolean"
+/>
+
+export const isAlphaNumeric =
+  `isAlphaNumeric('Hello01') // true
 isAlphaNumeric('1234567890') // false`
 
-<Code code={isAlphaNumeric} lang="js" />
+<Code frame='code' title='Examples' code={isAlphaNumeric} lang="js" />
 
 ### isSnakeCase
 
 Checks if a string is in snake_case format.
 
-export const isSnakeCase = 
-`// Valid
+#### Parameters
+
+- `str1`: `string` - The string to be checked.
+- `alphanumeric`: `boolean` - If true, allows numbers in the string.
+ 
+#### Returns: `boolean`
+
+- True if the string is in snake_case format, false otherwise.
+
+#### Conventions
+- Use lowercase letters.
+- Separate words with underscores (`_`).
+- No numbers allowed, unless specified otherwise.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function isSnakeCase(str: string, alphanumeric = false): boolean"
+/>
+
+export const isSnakeCase =
+  `// Valid
 isSnakeCase('snake_case_example') // true
 isSnakeCase('hello_world') // true
 
@@ -44,14 +97,35 @@ isSnakeCase('123at_start') // false
 isSnakeCase(' no_space_allowed') // false
 isSnakeCase('no_CAPS') // false`
 
-<Code code={isSnakeCase} lang="js" />
+<Code frame='code' title='Examples' code={isSnakeCase} lang="js" />
 
 ### isKebabCase
 
 Checks if a string is in kebab-case format.
 
-export const isKebabCase = 
-`// Valid
+#### Parameters
+
+- `str1`: `string` - The string to be checked.
+- `alphanumeric`: `boolean` - If true, allows numbers in the string.
+ 
+#### Returns: `boolean`
+
+- True if the string is in kebab-case format, false otherwise.
+
+ #### Conventions
+ - Use lowercase letters.
+ - Separate words with hyphens (`-`).
+ - No numbers allowed, unless specified otherwise.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function isKebabCase(str: string, alphanumeric = false): boolean"
+/>
+
+export const isKebabCase =
+  `// Valid
 isKebabCase('kebab-case-example') // true
 isKebabCase('hello-world') // true
 
@@ -64,14 +138,35 @@ isKebabCase('123at-start') // false
 isKebabCase(' no-space-allowed') // false
 isKebabCase('no-CAPS') // false`
 
-<Code code={isKebabCase} lang="js" />
+<Code frame='code' title='Examples' code={isKebabCase} lang="js" />
 
 ### isCamelCase
 
 Checks if a string is in camelCase format.
 
-export const isCamelCase = 
-`// Valid
+#### Parameters: `string` 
+- The string to be checked.
+
+#### Returns: `boolean`
+
+- True if the string is in camelCase format, false otherwise.
+
+ #### Conventions
+- Start with a lowercase letter.
+- Use uppercase for each new word.
+- Should consist of only letters.
+- No separator between words allowed.
+- No numbers allowed.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function isCamelCase(str: string): boolean"
+/>
+
+export const isCamelCase =
+  `// Valid
 isCamelCase('camelCaseExample') // true
 isCamelCase('helloWorld') // true
 
@@ -80,14 +175,35 @@ isCamelCase('CAMEL') // false
 isCamelCase(' noSpaceAllowed') // false
 isCamelCase('withThe1234') // false`
 
-<Code code={isCamelCase} lang="js" />
+<Code frame='code' title='Examples' code={isCamelCase} lang="js" />
 
 ### isPascalCase
 
 Checks if a string is in PascalCase format.
 
-export const isPascalCase = 
-`// Valid
+#### Parameters: `string` 
+- The string to be checked.
+
+#### Returns: `boolean`
+
+- True if the string is in PascalCase format, false otherwise.
+
+ #### Conventions
+- Start with an uppercase letter.
+- Use uppercase for each new word.
+- Should consist of only letters.
+- No separator between words allowed.
+- No numbers allowed.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function isPascalCase(str: string): boolean"
+/>
+
+export const isPascalCase =
+  `// Valid
 isPascalCase('PascalCaseExample') // true
 isPascalCase('HelloWorld') // true
 
@@ -96,4 +212,4 @@ isPascalCase('PASCAL') // false
 isPascalCase(' NoSpaceAllowed') // false
 isPascalCase('WithThe1234') // false`
 
-<Code code={isPascalCase} lang="js" />
+<Code frame='code' title='Examples' code={isPascalCase} lang="js" />

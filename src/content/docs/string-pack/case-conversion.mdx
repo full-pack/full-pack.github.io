@@ -12,60 +12,162 @@ import { Code } from '@astrojs/starlight/components'
 
 Capitalizes the first letter of a word in a string.
 
+#### Parameters
+
+- `str`: `string` - The input string.
+- `locales?`: `Intl.LocalesArgument` - BCP 47 language tag(s) for case conversion (e.g., 'en-US').
+ 
+#### Returns: `string`
+
+The string with the first letter capitalized.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function capitalizeInitial(str: string, locales?: Intl.LocalesArgument): string"
+/>
+
 export const capitalizeInitial =
-`capitalizeInitial('hello') // 'Hello'
+  `capitalizeInitial('hello') // 'Hello'
 
 capitalizeInitial(':> hello') // ':> Hello'`;
 
-<Code code={capitalizeInitial} lang="js" />
+<Code frame='code' title='Examples' code={capitalizeInitial} lang="js" />
 
 ### capitalizeWords
 
 Capitalizes the first letter of each word in a given string.
 
-export const capitalizeWords = 
-`capitalizeWords('hello world') // 'Hello World'
+#### Parameters
+
+- `str`: `string` - The input string.
+- `locales?`: `Intl.LocalesArgument` - BCP 47 language tag(s) for case conversion (e.g., 'en-US').
+ 
+#### Returns: `string`
+
+The input string with the first letter of each word capitalized.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function capitalizeWords(str: string, locales?: Intl.LocalesArgument): string"
+/>
+
+export const capitalizeWords =
+  `capitalizeWords('hello world') // 'Hello World'
 
 capitalizeWords('This was your big idea, remember?') // 'This Was Your Big Idea, Remember?'`;
 
-<Code code={capitalizeWords} lang="js" />
+<Code frame='code' title='Examples' code={capitalizeWords} lang="js" />
 
 ### snakeCase
 
 Converts a string to snake_case format.
 
-export const snakeCase = `snakeCase('hello WorLd') // 'hello_world'
+#### Parameters
+
+- `str`: `string` - The input string.
+- `inWords`: `boolean` If true, converts numbers to words in snake_case format.
+- `locales?`: `Intl.LocalesArgument` - BCP 47 language tag(s) for case conversion (e.g., 'en-US').
+ 
+#### Returns: `string`
+
+The string converted to snake_case format.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function snakeCase(str: string, inWords?: boolean, locales?: Intl.LocalesArgument): string"
+/>
+
+export const snakeCase =
+  `snakeCase('hello WorLd') // 'hello_world'
 snakeCase('from-kebab-case') // 'from_kebab_case'
 snakeCase('snake Case With Numbers123', true) // 'snake_case_with_numbers_one_two_three'`
 
-<Code code={snakeCase} lang="js" />
+<Code frame='code' title='Examples' code={snakeCase} lang="js" />
 
 ### kebabCase
 
 Converts a string to kebab-case format.
 
-export const kebabCase = `kebabCase('h3llo WoRld') // 'h3llo-world'
+#### Parameters
+
+- `str`: `string` - The input string.
+- `inWords`: `boolean` If true, converts numbers to words in kebab-case format.
+- `locales?`: `Intl.LocalesArgument` - BCP 47 language tag(s) for case conversion (e.g., 'en-US').
+ 
+#### Returns: `string`
+
+The string converted to kebab-case format.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function kebabCase(str: string, inWords?: boolean, locales?: Intl.LocalesArgument): string"
+/>
+
+export const kebabCase =
+  `kebabCase('h3llo WoRld') // 'h3llo-world'
 kebabCase('from_snake_case') // 'from-snake-case'
 kebabCase('kebab Case With Numbers123', true) // 'kebab-case-with-numbers-one-two-three'`
 
-<Code code={kebabCase} lang="js" />
+<Code frame='code' title='Examples' code={kebabCase} lang="js" />
 
 ### camelCase
 
 Converts a string to camelCase format.
 
-export const camelCase = `camelCase('hello WoRld') // 'helloWorld'
+#### Parameters
+
+- `str`: `string` - The input string.
+- `locales?`: `Intl.LocalesArgument` - BCP 47 language tag(s) for case conversion (e.g., 'en-US').
+ 
+#### Returns: `string`
+
+The string converted to camelCase format.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function camelCase(str: string, locales?: Intl.LocalesArgument): string"
+/>
+
+export const camelCase =
+  `camelCase('hello WoRld') // 'helloWorld'
 camelCase('Test CaSe ExamplE') // 'testCaseExample'
 camelCase('camel Case With Numbers123') // 'camelCaseWithNumbers'`
 
-<Code code={camelCase} lang="js" />
+<Code frame='code' title='Examples' code={camelCase} lang="js" />
 
 ### pascalCase
 
 Converts a string to PascalCase format.
 
-export const pascalCase = `pascalCase('hello WoRld') // 'HelloWorld'
+#### Parameters
+
+- `str`: `string` - The input string.
+- `locales?`: `Intl.LocalesArgument` - BCP 47 language tag(s) for case conversion (e.g., 'en-US').
+ 
+#### Returns: `string`
+
+The string converted to PascalCase format.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function PascalCase(str: string, locales?: Intl.LocalesArgument): string"
+/>
+
+export const pascalCase =
+  `pascalCase('hello WoRld') // 'HelloWorld'
 pascalCase('Test CaSe ExamplE') // 'TestCaseExample'
 pascalCase('pasCal Case With Numbers123') // 'PascalCaseWithNumbers'`
 
-<Code code={pascalCase} lang="js" />
+<Code frame='code' title='Examples' code={pascalCase} lang="js" />

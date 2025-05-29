@@ -11,6 +11,21 @@ import { Code } from '@astrojs/starlight/components'
 
 Reverses the sequence of characters in given string.
 
+#### Parameters: `string` 
+
+- A string.
+ 
+#### Returns: `string`
+
+- The string in reverse order.
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code="function reverse(str: string): string"
+/>
+
 export const reverse = `reverse('bad') // 'dab'`
 
-<Code code={reverse} lang="js" />
+<Code frame='code' title='Example' code={reverse} lang="js" />

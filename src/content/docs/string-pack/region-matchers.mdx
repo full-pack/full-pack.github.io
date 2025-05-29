@@ -12,8 +12,32 @@ import { Code } from '@astrojs/starlight/components'
 
 Compares two strings or regions for equality.
 
-export const regionMatch = 
-`// Matching identical strings
+#### Parameters
+
+- `str1`: `StringRegion | string` - The first string or region to compare.
+- `str2`: `StringRegion | string` - The second string or region to compare.
+- `start?`: `number` - The starting index of the region in the first string.
+- `end?`: `number` - The ending index of the region in the first string.
+ 
+#### Returns: `boolean`
+
+- True if the strings or regions match, false otherwise.
+
+export const regionMatchDefinition = `function regionMatch(
+        str1: StringRegion | string, 
+        str2: StringRegion | string, 
+        start?: number, 
+        end?: number): boolean`
+
+<Code
+    frame="code"
+    title="Definition"
+    lang="ts"
+    code={regionMatchDefinition}
+/>
+
+export const regionMatch =
+  `// Matching identical strings
 regionMatch('hello', 'hello') // true
 
 // Matching identical regions in strings
@@ -24,16 +48,45 @@ regionMatch(str1, str2) // true
 regionMatch('hello world', 'hello there', 0, 5) // true
 
 // Not matching regions
-regionMatch('hello world', 'hello there', 6, 11) // false`;
+regionMatch('hello world', 'hello there', 6, 11) // false
 
-<Code code={regionMatch} lang="js" />
+// Matching regions with different ending points
+const str5 = { str: ' hello world', start: 1, end: 6 };
+const str6 = { str: 'hello there', start: 0, end: 5 };
+regionMatch(str5, str6); // true`;
+
+<Code frame="code" title="Examples" code={regionMatch} lang="js" />
 
 ### looseRegionMatch
 
 Performs a loose comparison of two strings or regions for equality.
 
-export const looseRegionMatch = 
-`// Loose matching identical strings
+#### Parameters
+
+- `str1`: `StringRegion` | `string` - The first string or region to compare.
+- `str2`: `StringRegion` | `string` - The second string or region to compare.
+- `start?`: `number` - The starting index of the region in the first string.
+- `end?`: `number` - The ending index of the region in the first string.
+ 
+#### Returns: `boolean`
+
+- True if the strings or regions match loosely, false otherwise.
+
+export const looseRegionMatchDefinition = `function looseRegionMatch(
+        str1: StringRegion | string, 
+        str2: StringRegion | string, 
+        start?: number, 
+        end?: number): boolean`
+
+<Code
+    frame="code"
+    title="Definition"
+    lang="ts"
+    code={looseRegionMatchDefinition}
+/>
+
+export const looseRegionMatch =
+  `// Loose matching identical strings
 looseRegionMatch('hello', 'HeLLo') // true
 
 // Loose matching identical regions in strings
@@ -41,4 +94,4 @@ const str1 = { str: ' hellO world', start: 1, end: 6 }
 const str2 = { str: 'HelLo there', start: 0, end: 5 }
 looseRegionMatch(str1, str2) // true`;
 
-<Code code={looseRegionMatch} lang="js" />
+<Code frame='code' title='Examples' code={looseRegionMatch} lang="js" />

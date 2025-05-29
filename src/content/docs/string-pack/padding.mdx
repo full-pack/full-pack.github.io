@@ -6,48 +6,140 @@ head:
       content: String-Pack | Padding
 ---
 
-import { Code } from '@astrojs/starlight/components'
+import { Code, Aside } from '@astrojs/starlight/components'
 
 Adds padding to given string.
 
 ### padStart
 
-Pads the start of a string with a specified fill string a certain number of times.
+Pads the start (left) of a string with a specified fill string a certain number of times.
 
-export const padStart = 
-`// Basic Usage
+#### Parameters
+
+- `val`: `string` - The original string.
+- `fillString?`: `string` - The string to use for padding (default is ' ' | `U+0020` | *single whitespace* ).
+- `repeatCount?`: `number` - The number of times to repeat the fill string (default is 1).
+- `maxLen`: `number` | `undefined` - The maximum length of the resulting string.
+ 
+#### Returns: `string`
+
+- The start/left padded string.
+
+export const padStartDefinition = `function padStart(
+      val: string, 
+      fillString?: string, 
+      repeatCount?: number, 
+      maxLen?: number): string
+`
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code={padStartDefinition}
+/>
+
+export const padStart =
+  `// Basic Usage
 padStart('hello', '+', 3) // +++hello
 
 // Limiting total length
 padStart('hello', '-', 4, 8) // ---hello`;
 
-<Code code={padStart} lang="js" />
+<Code frame='code' title='Examples' code={padStart} lang="js" />
 
-### padStart
+### padEnd
 
-Pads the end of a string with a specified fill string a certain number of times.
+Pads the end (right) of a string with a specified fill string a certain number of times.
 
-export const padEnd = 
-`// Basic Usage
-padStart('hello', '+', 3) // +++hello
+#### Parameters
+
+- `val`: `string` - The original string.
+- `fillString?`: `string` - The string to use for padding (default is ' ' | `U+0020` | *single whitespace* ).
+- `repeatCount?`: `number` - The number of times to repeat the fill string (default is 1).
+- `maxLen`: `number` | `undefined` - The maximum length of the resulting string.
+ 
+#### Returns: `string`
+
+- The end/right padded string.
+
+export const padEndDefinition = `function padEnd(
+      val: string, 
+      fillString?: string, 
+      repeatCount?: number, 
+      maxLen?: number): string
+`
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code={padEndDefinition}
+/>
+
+export const padEnd =
+  `// Basic Usage
+padEnd('hello', '+', 3) // +++hello
 
 // Limiting total length
-padStart('hello', '-', 4, 8) // ---hello`;
+padEnd('hello', '-', 4, 8) // ---hello`;
 
-<Code code={padEnd} lang="js" />
+<Code frame='code' title='Examples' code={padEnd} lang="js" />
 
 ### padBidirectional
 
 Pads a string with a specified fill string a certain number of times on both ends.
 
-export const padBidirectional = 
-`// Basic usage
-padBidirectional('hello', '*', 2) // '**hello**'
+#### Parameters
+
+- `val`: `string` - The original string.
+- `fillString?`: `string` - The string to use for padding (default is ' ' | `U+0020` | *single whitespace* ).
+- `PaddingOptions.repeatCount?`: `number` - The number of times to repeat the fill string (default is 1).
+- `PaddingOptions.maxLen?`: `number` | `undefined` - The maximum length of the resulting string.
+- `PaddingOptions.bias`: `PaddingBias` - To control the distribution of padding on both sides (default is PaddingBias.END).
+
+<Aside>
+  `PaddingOptions.bias` is only applied if `PaddingOptions.maxLen` is defined & length of string padded is odd. 
+</Aside>
+
+#### Returns: `string`
+
+- The padded string.
+
+export const padBidirectionalDefinition = `
+enum PaddingBias {
+    START = 0,
+    END = 1
+}
+
+interface PaddingOptions {
+    repeatCount?: number
+    maxLen?: number
+    bias?: PaddingBias
+}
+
+function padBidirectional(
+        val: string, 
+        fillString?: string, 
+        paddingOptions?: PaddingOptions): string
+`
+
+<Code
+    frame='code'
+    title="Definition"
+    lang="ts"
+    code={padBidirectionalDefinition}
+/>
+
+export const padBidirectional =
+  `// Basic usage
+padBidirectional('hello', '*', {repeatCount: 2}); // '**hello**'
 
 // Limiting total length
-padBidirectional('world', '-', 3, 10) // '--world---'
+padBidirectional('world', '-', {repeatCount: 3, maxLen: 10}); // '--world---'
 
 // Controlling padding distribution
-padBidirectional('example', '_', 2, 10, 0) // '\*\*example_'`;
+padBidirectional('example', '*', 
+    {repeatCount: 2, maxLen: 10, bias: PaddingBias.START}); // '**example*'`;
 
-<Code code={padBidirectional} lang="js" />
+<Code frame='code' title='Examples' code={padBidirectional} lang="js" />
